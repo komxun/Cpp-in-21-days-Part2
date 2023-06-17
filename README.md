@@ -66,6 +66,9 @@ Frisky.Bark();    // Error: Member function Bark not found in class Cat !!!
 # Private VS Public Access
 **Private members** - can be accessed only within methods of the class itself
 **Public members** - can be accessed through any object of the class
+
+
+
 - All members of a class are private by default
 
 ```cpp
@@ -82,4 +85,24 @@ int main()
   Boots.itsAge = 5;  // error! can't access private data!
 }
 ```
+Q: Why can't Boots access his own age? \
+A: Boots can, but you can't! \
+Boots, in his own methods, can access all his parts-public and private
+
+## Accessing Private Data
+- To access private data in a class, you must create public functions, known as "accessor methods"
+- A public accessor method is a class member function used to read/set the value of a private member variables
+- Accessor functions enable you to separate the details of how the data is _stored_ from how it is _used_. This makes your program easier to maintain
+
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/a5b15b02106112ed8d2513422e915cf286a8ecc0/Day%206%20-%20Object%20Oriented%20Programming/class_example.cpp#L4-L43
+
+- class methods definition includes the class name followed by two colons (::) and the function name.\
+```cpp
+void Cat::SetAge(int Age) 
+ { 
+     itsAge = Age;       // set member variabl e itsAge  
+ }                       // to value passed in by Age 
+ ```
+
+# Constructors and Destructors
 
