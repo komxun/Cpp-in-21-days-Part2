@@ -105,4 +105,40 @@ void Cat::SetAge(int Age)
  ```
 
 # Constructors and Destructors
+- Constructors create and initialize objects of your class
+- Destructors clean up after the object and free any resources or memory that you might have allocated
+- The constructor can take parameters as needed, but it cannot have a return value - not even void
+- A destructor always has the name of the class, preceded by a tilde (~).
+- Destructors take no arguments and have no return value.
+
+## Using the Default Constructor
+- All objects must be "constructed" and "destructed"
+
+```cpp
+Cat Rags;   // Rags gets no parameter
+            // You must have a constructor in the form Cat(); (this is a Default constructor)
+Cat Frisky (5,7);  // You must have a custom constructor taking two parameters
+```
+
+- It is always recommended that you define a custom constructor, and set the member variables to appropriate defaults to ensure that the object will always behave correctly!
+- You must include the definition of the constructor and destructor (A standard destructor takes no action in the definition)
+
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/5ba45606b3fd1c020cbe0da1b146112895e1120c/Day%206%20-%20Object%20Oriented%20Programming/Constructors_Destructors.cpp#L1-L60
+
+# Including const Member Functions
+- You can also declare a class method (function) to be const - you are promising that the function won't change the value of any of the variables of the class
+- It as good programming practice to declare as many methods to be const as possible
+
+```cpp
+int GetAge() const;   // this function is read-only, so it should be declared const
+void SetAge(int age); // this can't be const as it changes the member variable itsAge
+```
+
+# Using a Header File
+- For good programming practice, the declaration should be put into the header file (.h, .hp, or .hpp)
+- Most of the time, clients of your class don't care about the implementation specifics
+- After declaration in a header file, you must attach the header file to the .cpp file as follow:
+```cpp
+#include "Cat.hpp"
+```
 
