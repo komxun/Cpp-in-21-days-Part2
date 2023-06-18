@@ -1,5 +1,5 @@
 # Cpp-in-21-days-Part2
-My note for learning C++ in 21 days (Day 6 - 10)
+My note for learning C++ in 21 days (Day 6 - 7)
 
 # Object-Oriented Programming
 In C++, the programmer can extend the language by creating any type needed, 
