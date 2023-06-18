@@ -141,4 +141,150 @@ void SetAge(int age); // this can't be const as it changes the member variable i
 ```cpp
 #include "Cat.hpp"
 ```
+# Inline implementation
+- Method 1: you can make class methods inline
+```cpp
+inline int Cat::GetWeight()
+{
+    return itsWeight;
+}
+```
+- Method 2: you can put the definition of a function into the declaration of the class
+``` cpp
+class Cat
+{
+    public:
+        int GetWeight() const {return itsWeight;}  // inline
+        void SetWeight() {int weight};
+};
+```
+Example:
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%206%20-%20Object%20Oriented%20Programming/Cat.hpp#L3-L15
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%206%20-%20Object%20Oriented%20Programming/Cat.cpp#L4-L32
+
+# Classes with Other Classes as Member Data
+Example : A rectangle is composed of lines. A line is defined by two points. A point is defined by an x-coordinate and a y-coordinate
+
+You first declare a Point class to hold the x- and y-coordinates of each point. 
+
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%206%20-%20Object%20Oriented%20Programming/Rectangle.hpp#L4-L62
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%206%20-%20Object%20Oriented%20Programming/Rectangle.cpp#L2-L47
+
+# Structures
+- In C++, a struct is the same as a class, except that its members are public by default
+``` cpp
+struct Cat
+{
+    public:
+        int GetWeight() const {return itsWeight;}  // inline
+        void SetWeight() {int weight};
+};
+```
+
+# Loop with goto
+- As a rule, programmers avoid goto because it can cause a jump to any location in your source code, backward or forward!
+
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/loop_goto.cpp#L3-L17
+
+# while Loops
+- The while statement checks its condition before executing any of its statements, and if the condition evaluates false, the entire body of the while loop is skipped.
+Simple example:
+```cpp
+// count to 10
+int x = 0;
+while (x<10)
+{
+    cout << "X: " << x++;
+}
+```
+Complex while loops example:
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/complex_while_loop.cpp#L5-L31
+
+# continue and break
+- The continue statement jumps back to the top  of the loop
+- The break statement immediately exits the while loop
+```cpp
+while (small < large && small < MAXSMALL)
+{
+    small++;
+    if (small % skip == 0)
+    {
+        cout << "skipping on " << small << endl;
+        continue;
+    }
+    if (large == target)
+    {
+        cout << "Target reached!";
+        break;
+    }
+    large -= 2;
+}
+```
+
+# do..while Loops
+- It is possible that the body of a while loop will never execute
+- do...while loop executes the body of the loop before its condition is tested
+- It ensures that the body always executes **at least one time**
+``` cpp
+// Example: count to 10
+int x = 0;
+do
+    cout << "X: " << x++;
+while (x<10)
+```
+
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/do_while_loop.cpp#L4-L21
+
+# for Loops
+- A for loop combines 3 steps into 1 statement: Initializing, Testing, and Incrementing\
+for (_initialization_;   _test_;   _action_) { _statement_ } 
+``` cpp
+int counter
+for (counter=0; counter<5; counter++)
+    std::cout << "Looping! ";
+    
+std::cout << "\nCounter: " << counter << std::endl;
+```
+
+Multiple statements in for loops:
+```cpp
+#include <iostream>
+int main()
+{
+    for (int i=0; j=0; i<3; i++, j++)
+        std::cout << "i: " << i << "j: " << std::endl;
+    return 0
+}
+
+// output:  i: 0 j: 0 --> i: 1 j: 1 -->i: 2 j: 2 
+```
+
+## Null Statements in for loops
+- Using a null statement (;), you can create a for loop that acts exactly like a while loop by leaving our the first and third statements
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/for_loop_null_statement.cpp#L3-L15
+
+## forever Loop
+- A forever loop is a loop that does not have an exit condition. To exit the loop, a break statement must be used.
+
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/forever_loop.cpp#L3-L62
+
+
+# Switch Statements
+- Unlike if, which evaluates one value, switch statements allow you to branch on any of several values
+- If no break statement is at the end of a case statement, execution falls through to the next case statement!!!
+``` cpp
+// General form of the switch statemnet
+switch (expression)
+{
+    case valueOne: statement; 
+                   break;
+    case valueTwo: statement:
+                   break;
+    // . . .
+    default: statement;
+}
+```
+
+https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/switch_case.cpp#L3-L29
+
 
