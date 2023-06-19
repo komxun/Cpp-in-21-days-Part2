@@ -1,6 +1,25 @@
 # Cpp-in-21-days-Part2
 My note for learning C++ in 21 days (Day 6 - 7)
 
+Reference: Liberty, J., & Jones, B. L. (2004). _Sams teach yourself C++ in 21 days_. Sams Publishing.
+> Created by Komsun Tamanakijprasart
+
+Table of contents
+=================
+
+<!--ts-->
+  * [Object-Oriented Programming](#object-oriented-programming)
+  * [Classes and Members](#classes-and-members)
+      * [Declaring a Class](#declaring-a-class)
+      * [Defining an Object](#defining-an-object)
+      * [Classes VS Objects](#classes-vs-objects)
+  * [Accessing Class Memmbers](#accessing-class-members)
+      * [Assigning To Objects, Not to Classes](#assigning-to-objects-not-to-classes)
+  * [Private VS Public Access](#private-vs-public-access)
+      * [Accessing Private Data](#accessing-private-data)
+     
+<!--te-->
+
 # Object-Oriented Programming
 In C++, the programmer can extend the language by creating any type needed, 
 and each of these new types can have all the functionality and power of the built-in types.
