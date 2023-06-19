@@ -46,20 +46,20 @@ class Cat
     void Meow();
 };
 ```
-Declaring this class doen't allocate memory for a Cat. It just tells the compiler what a Cat is and what it can do.
+Declaring this class doesn't allocate memory for a Cat. It just tells the compiler what a Cat is and what it can do.
 
 ## Defining an Object
-After you declare a class, you can then use it as a new type ot declare a variables of that type.
+After you declare a class, you can then use it as a new type to declare a variable of that type.
 ```cpp
 unsigned int GrossWeight;  // define an unsigned integer
 Cat Frisky;                // define a Cat
 ```
 ## Classes VS Objects
-- Frisky is an object of type Cat, in the same way that GrossWeight is a variable of type unsigned int
+- `Frisky` is an object of type `Cat`, in the same way that `GrossWeight` is a variable of type `unsigned int`
 - An object is an individual instance of a class
 
 # Accessing Class Members
-To access the member variables/functions of the object, use the dot operator (.)
+To access the member variables/functions of the object, use the dot operator (`.`)
 ```cpp
 Frisky.itsWeight = 50;
 Frisky.Meow();
@@ -88,7 +88,7 @@ Frisky.Bark();    // Error: Member function Bark not found in class Cat !!!
 
 
 
-- All members of a class are private by default
+- All members of a class are `private` by default
 
 ```cpp
 class Cat
@@ -109,13 +109,14 @@ A: Boots can, but you can't! \
 Boots, in his own methods, can access all his parts-public and private
 
 ## Accessing Private Data
-- To access private data in a class, you must create public functions, known as "accessor methods"
-- A public accessor method is a class member function used to read/set the value of a private member variables
+- To access `private` data in a class, you must create public functions, known as "accessor methods"
+- A public accessor method is a class member function used to read/set the value of a `private` member variables
 - Accessor functions enable you to separate the details of how the data is _stored_ from how it is _used_. This makes your program easier to maintain
 
 https://github.com/komxun/Cpp-in-21-days-Part2/blob/a5b15b02106112ed8d2513422e915cf286a8ecc0/Day%206%20-%20Object%20Oriented%20Programming/class_example.cpp#L4-L43
 
-- class methods definition includes the class name followed by two colons (::) and the function name.\
+- class methods definition includes the class name followed by two colons (`::`) and the function name
+
 ```cpp
 void Cat::SetAge(int Age) 
  { 
@@ -127,7 +128,7 @@ void Cat::SetAge(int Age)
 - Constructors create and initialize objects of your class
 - Destructors clean up after the object and free any resources or memory that you might have allocated
 - The constructor can take parameters as needed, but it cannot have a return value - not even void
-- A destructor always has the name of the class, preceded by a tilde (~).
+- A destructor always has the name of the class, preceded by a tilde (`~`).
 - Destructors take no arguments and have no return value.
 
 ## Using the Default Constructor
@@ -145,8 +146,8 @@ Cat Frisky (5,7);  // You must have a custom constructor taking two parameters
 https://github.com/komxun/Cpp-in-21-days-Part2/blob/5ba45606b3fd1c020cbe0da1b146112895e1120c/Day%206%20-%20Object%20Oriented%20Programming/Constructors_Destructors.cpp#L1-L60
 
 # Including const Member Functions
-- You can also declare a class method (function) to be const - you are promising that the function won't change the value of any of the variables of the class
-- It as good programming practice to declare as many methods to be const as possible
+- You can also declare a class method (function) to be `const` - you are promising that the function won't change the value of any of the variables of the class
+- It is good programming practice to declare as many methods to be `const` as possible
 
 ```cpp
 int GetAge() const;   // this function is read-only, so it should be declared const
@@ -154,9 +155,9 @@ void SetAge(int age); // this can't be const as it changes the member variable i
 ```
 
 # Using a Header File
-- For good programming practice, the declaration should be put into the header file (.h, .hp, or .hpp)
+- For good programming practice, the declaration should be put into the header file (`.h`, `.hp`, or `.hpp`)
 - Most of the time, clients of your class don't care about the implementation specifics
-- After declaration in a header file, you must attach the header file to the .cpp file as follow:
+- After declaration in a header file, you must attach the header file to the `.cpp` file as follow:
 ```cpp
 #include "Cat.hpp"
 ```
@@ -190,7 +191,7 @@ https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275
 https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%206%20-%20Object%20Oriented%20Programming/Rectangle.cpp#L2-L47
 
 # Structures
-- In C++, a struct is the same as a class, except that its members are public by default
+- In C++, a `struct` is the same as a `class`, except that its members are `public` by default
 ``` cpp
 struct Cat
 {
@@ -201,12 +202,12 @@ struct Cat
 ```
 
 # Loop with goto
-- As a rule, programmers avoid goto because it can cause a jump to any location in your source code, backward or forward!
+- As a rule, programmers avoid `goto` because it can cause a jump to any location in your source code, backward or forward!
 
 https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/loop_goto.cpp#L3-L17
 
 # while Loops
-- The while statement checks its condition before executing any of its statements, and if the condition evaluates false, the entire body of the while loop is skipped.
+- The `while` statement checks its condition before executing any of its statements, and if the condition evaluates false, the entire body of the while loop is skipped.
 Simple example:
 ```cpp
 // count to 10
@@ -220,8 +221,8 @@ Complex while loops example:
 https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/complex_while_loop.cpp#L5-L31
 
 # continue and break
-- The continue statement jumps back to the top  of the loop
-- The break statement immediately exits the while loop
+- The `continue` statement jumps back to the top  of the loop
+- The `break` statement immediately exits the while loop
 ```cpp
 while (small < large && small < MAXSMALL)
 {
@@ -242,7 +243,7 @@ while (small < large && small < MAXSMALL)
 
 # do..while Loops
 - It is possible that the body of a while loop will never execute
-- do...while loop executes the body of the loop before its condition is tested
+- `do`...`while` loop executes the body of the loop before its condition is tested
 - It ensures that the body always executes **at least one time**
 ``` cpp
 // Example: count to 10
@@ -255,8 +256,8 @@ while (x<10)
 https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/do_while_loop.cpp#L4-L21
 
 # for Loops
-- A for loop combines 3 steps into 1 statement: Initializing, Testing, and Incrementing\
-for (_initialization_;   _test_;   _action_) { _statement_ } 
+- A `for` loop combines 3 steps into 1 statement: Initializing, Testing, and Incrementing\
+`for (initialization;   test;   action) { statement }` 
 ``` cpp
 int counter
 for (counter=0; counter<5; counter++)
@@ -279,18 +280,18 @@ int main()
 ```
 
 ## Null Statements in for loops
-- Using a null statement (;), you can create a for loop that acts exactly like a while loop by leaving our the first and third statements
+- Using a null statement (`;`), you can create a `for` loop that acts exactly like a `while` loop by leaving our the first and third statements
 https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/for_loop_null_statement.cpp#L3-L15
 
 ## forever Loop
-- A forever loop is a loop that does not have an exit condition. To exit the loop, a break statement must be used.
+- A forever loop is a loop that does not have an exit condition. To exit the loop, a `break` statement must be used.
 
 https://github.com/komxun/Cpp-in-21-days-Part2/blob/054330158373a9c7a61c588e9275936f31b3fe1a/Day%207%20-%20Program%20Flow/forever_loop.cpp#L3-L62
 
 
 # Switch Statements
-- Unlike if, which evaluates one value, switch statements allow you to branch on any of several values
-- If no break statement is at the end of a case statement, execution falls through to the next case statement!!!
+- Unlike `if`, which evaluates one value, `switch` statements allow you to branch on any of several values
+- If no `break` statement is at the end of a case statement, execution falls through to the next case statement!!!
 ``` cpp
 // General form of the switch statemnet
 switch (expression)
