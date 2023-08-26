@@ -19,6 +19,7 @@ Table of contents
       * [Accessing Private Data](#accessing-private-data)
   * [Constructors and Destructors](#constructors-and-destructors)
       * [Using the Default Constructor](#using-the-default-constructor)
+  * [const member functions](#including-const-member-functions)
   * [Using a Header file](#using-a-header-file)
   * [Inline implementation](#inline-implementation)
   * [Classes with Other Classes as Member Data](#classes-with-other-classes-as-member-data)
